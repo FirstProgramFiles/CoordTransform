@@ -2,7 +2,7 @@ const express = require("express");
 const proj4 = require("proj4");
 const multer = require("multer");
 const app = express();
-
+const PORT = process.env.PORT || 3000;
 
 const storageConfig = multer.diskStorage({
 	filename: (req, file, cb) => {
@@ -10,10 +10,9 @@ const storageConfig = multer.diskStorage({
 	}
 });
 
-app.use(express.static(__dirname));
 app.use(multer({ storage: storageConfig }).single("filedata"));
 
-app.post("/Transform", function (req, res, next) {
+app.post("/Transform", function (req, res) {
 	data = req.body.Coords;
 	Coord = JSON.parse(data);
 	console.log(Coord);
@@ -40,5 +39,5 @@ app.post("/Transform", function (req, res, next) {
 	console.log(LonTransform);
 	console.log(LatTransform);
 });
-app.listen(3000);
+app.listen(PORT, () => console.log(`Server is running in port ${PORT}`));
 module.exports = app;
