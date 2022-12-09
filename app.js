@@ -28,7 +28,7 @@ app.post("/Transform", function (req, res) {
 			var fromProjection = '+proj=tmerc +lat_0=0 +lon_0=142.71666666667 +k=1 +x_0=1300000 +y_0=-4516586.439 +ellps=krass +towgs84=23.57,-140.95,-79.8,0,0.35,0.79,-0.22 +units=m +no_defs';
 			break;
 		case 'ГСК-2011':
-			var fromProjection = '+proj=longlat +ellps=GSK2011 +no_defs';
+			var fromProjection = '+proj=longlat +a=6378136.5 +rf=298.2564151 +towgs84=0.013,-0.092,-0.03,-0.001738,0.003559,-0.004263,0.0074 +no_defs';
 			break;
 		case 'СК-42':
 			var fromProjection = '+proj=longlat +ellps=krass +towgs84=25,-141,-78.5,0,0.35,0.736,0 +no_defs';
