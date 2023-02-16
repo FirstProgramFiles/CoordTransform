@@ -33,6 +33,9 @@ app.post("/Transform", function (req, res) {
 		case 'СК-42':
 			var fromProjection = '+proj=longlat +ellps=krass +towgs84=25,-141,-78.5,0,0.35,0.736,0 +no_defs';
 			break;
+		case 'МСК-02, зона 2':
+			var fromProjection = '+proj=tmerc +lat_0=0 +lon_0=58.03333333333 +k=1 +x_0=2300000 +y_0=-5409414.70 +ellps=krass +towgs84=23.57,-140.95,-79.8,0,0.35,0.79,-0.22 +units=m +no_defs';
+			break;
 	}
 
 	const toProjection = '+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs'; //WGS84
